@@ -3,8 +3,15 @@ import React from "react"
 import { MainAbsoluteTop } from "./partials/navbar/MainAbsoluteTop"
 import { GoTo } from "./partials/layouts-components/GoTo"
 import { Footer } from "./partials/footer/Footer"
+import ScheduleMeeting from "./ScheduleMeeting"
+import { scheduleMeetingDialog } from "../redux/actions"
+import { useDispatch } from "react-redux"
 
-export const Home = () => (
+export const Home = () => {
+  
+  const dispatch = useDispatch()
+
+ return (
   <>
     {/* Required Meta Tags Always Come First */}
     <meta charSet = "utf-8" />
@@ -60,6 +67,7 @@ export const Home = () => (
       href = "{{ url_for('static', filename='vendor/swiper/swiper-bundle.min.css') }}"
     />
     <MainAbsoluteTop />
+
     {/* ========== MAIN CONTENT ========== */}
     <main id = "content" role = "main">
       {/* Hero */}
@@ -74,7 +82,9 @@ export const Home = () => (
               <p className = "fs-3">AI Driven risk analytics.</p>
             </div>
             <div className = "d-grid d-sm-flex gap-3 mb-5">
-              <a className = "btn btn-primary" href = "#">
+              <a className = "btn btn-primary" onClick={() => {
+                dispatch(scheduleMeetingDialog({isVisible: true}))
+              }}>
                 Schedule a meeting
               </a>
               {/* <a class="btn btn-ghost-dark btn-pointer" href="#">Sign up free</a> */}
@@ -601,3 +611,4 @@ export const Home = () => (
     <GoTo />
   </>
 )
+}

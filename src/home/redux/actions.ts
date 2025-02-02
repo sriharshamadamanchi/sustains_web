@@ -1,6 +1,12 @@
 // Copyright © 2025 Sustains AI, All Rights Reserved
 import { action } from "../../common/store/typeSafe";
 
+export type ScheduleMeetingDialogType = {
+    isVisible: boolean;
+}
+
+export const scheduleMeetingDialog = (payload: ScheduleMeetingDialogType): any => action("src/home/redux/scheduleMeetingDialog", payload);
+
 export type FetchPortfoliosActionType = {
     userId: string;
 }

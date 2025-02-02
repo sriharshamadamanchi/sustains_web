@@ -1,5 +1,12 @@
+import { useDispatch } from "react-redux"
+import { scheduleMeetingDialog } from "../../../redux/actions"
+
 // Copyright © 2025 Sustains AI, All Rights Reserved
-export const Footer = () => (
+export const Footer = () => {
+
+  const dispatch = useDispatch()
+  
+  return (
   <>
     {/* <footer className="bg-dark">
       <div className="container">
@@ -419,7 +426,9 @@ export const Footer = () => (
             </h2>
           </div>
           <div className = "col-md-auto">
-            <a className = "btn btn-primary" href = "#">
+            <a className = "btn btn-primary" onClick={() => {
+              dispatch(scheduleMeetingDialog({isVisible: true}))
+            }}>
               Request demo
             </a>
           </div>
@@ -494,3 +503,4 @@ export const Footer = () => (
     </footer>
   </>
 )
+}
