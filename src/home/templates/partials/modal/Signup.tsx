@@ -35,10 +35,7 @@ export const Signup = () => (
                   className = "js-animation-link"
                   href = "javascript:;"
                   role = "button"
-                  data-hs-show-animation-options = '{
-                 "targetSelector": "#signupModalFormSignup",
-                 "groupName": "idForm"
-               }'
+                  data-hs-show-animation-options = '{"targetSelector": "#signupModalFormSignup","groupName": "idForm"}'
                 >
                   Sign up here
                 </a>
@@ -59,10 +56,7 @@ export const Signup = () => (
               <a
                 className = "js-animation-link btn btn-primary btn-lg"
                 href = "#"
-                data-hs-show-animation-options = '{
-               "targetSelector": "#signupModalFormLoginWithEmail",
-               "groupName": "idForm"
-             }'
+                data-hs-show-animation-options = '{"targetSelector": "#signupModalFormLoginWithEmail","groupName": "idForm"}'
               >
                 Log in with Email
               </a>
@@ -83,10 +77,7 @@ export const Signup = () => (
                   className = "js-animation-link"
                   href = "javascript:;"
                   role = "button"
-                  data-hs-show-animation-options = '{
-                 "targetSelector": "#signupModalFormSignup",
-                 "groupName": "idForm"
-               }'
+                  data-hs-show-animation-options = '{"targetSelector": "#signupModalFormSignup","groupName": "idForm"}'
                 >
                   Sign up here
                 </a>
@@ -128,10 +119,7 @@ export const Signup = () => (
                   <a
                     className = "js-animation-link form-label-link"
                     href = "javascript:;"
-                    data-hs-show-animation-options = '{
-               "targetSelector": "#signupModalFormResetPassword",
-               "groupName": "idForm"
-             }'
+                    data-hs-show-animation-options = '{"targetSelector": "#signupModalFormResetPassword","groupName": "idForm"}'
                   >
                     Forgot Password?
                   </a>
@@ -170,10 +158,7 @@ export const Signup = () => (
                   className = "js-animation-link"
                   href = "javascript:;"
                   role = "button"
-                  data-hs-show-animation-options = '{
-                 "targetSelector": "#signupModalFormLogin",
-                 "groupName": "idForm"
-               }'
+                  data-hs-show-animation-options = '{"targetSelector": "#signupModalFormLogin","groupName": "idForm"}'
                 >
                   Log in here
                 </a>
@@ -194,10 +179,7 @@ export const Signup = () => (
               <a
                 className = "js-animation-link btn btn-primary btn-lg"
                 href = "#"
-                data-hs-show-animation-options = '{
-               "targetSelector": "#signupModalFormSignupWithEmail",
-               "groupName": "idForm"
-             }'
+                data-hs-show-animation-options = '{"targetSelector": "#signupModalFormSignupWithEmail","groupName": "idForm"}'
               >
                 Sign up with Email
               </a>
@@ -224,10 +206,7 @@ export const Signup = () => (
                   className = "js-animation-link"
                   href = "javascript:;"
                   role = "button"
-                  data-hs-show-animation-options = '{
-                 "targetSelector": "#signupModalFormLogin",
-                 "groupName": "idForm"
-               }'
+                  data-hs-show-animation-options = '{"targetSelector": "#signupModalFormLogin","groupName": "idForm"}'
                 >
                   Log in here
                 </a>
@@ -344,10 +323,7 @@ export const Signup = () => (
                   <a
                     className = "js-animation-link form-label-link"
                     href = "javascript:;"
-                    data-hs-show-animation-options = '{
-                 "targetSelector": "#signupModalFormLogin",
-                 "groupName": "idForm"
-               }'
+                    data-hs-show-animation-options = '{"targetSelector": "#signupModalFormLogin","groupName": "idForm"}'
                   >
                     <i className = "bi-chevron-left small me-1" /> Back to Log in
                   </a>

@@ -33,13 +33,7 @@ export const DocsNavbar = () => (
                 <form
                   id = "docsSearch"
                   className = "position-relative"
-                  data-hs-list-options = '{
-               "searchMenu": true,
-               "keyboard": true,
-               "item": "searchTemplate",
-               "valueNames": ["component", "category", {"name": "link", "attr": "href"}],
-               "empty": "#searchNoResults"
-             }'
+                  data-hs-list-options = '{"searchMenu": true,"keyboard": true,"item": "searchTemplate","valueNames": ["component", "category", {"name": "link", "attr": "href"}],"empty": "#searchNoResults"}'
                 >
                   {/* Input Group */}
                   <div

@@ -2,7 +2,7 @@
 import React from "react"
 import { MainAbsoluteTop } from "./partials/navbar/MainAbsoluteTop"
 import { GoTo } from "./partials/layouts-components/GoTo"
-import { Footer } from "./partials/footer/Main"
+import { Footer } from "./partials/footer/Footer"
 
 export const Home = () => (
   <>

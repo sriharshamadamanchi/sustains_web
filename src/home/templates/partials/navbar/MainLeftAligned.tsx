@@ -50,10 +50,7 @@ export const MainLeftAligned = () => (
                 role = "button"
                 data-bs-toggle = "modal"
                 data-bs-target = "#signupModal"
-                data-hs-show-animation-options = '{
-                 "targetSelector": "#signupModalFormLogin",
-                 "groupName": "idForm"
-               }'
+                data-hs-show-animation-options = '{"targetSelector": "#signupModalFormLogin","groupName": "idForm"}'
               >
                 Log in
               </a>
@@ -63,10 +60,7 @@ export const MainLeftAligned = () => (
                 role = "button"
                 data-bs-toggle = "modal"
                 data-bs-target = "#signupModal"
-                data-hs-show-animation-options = '{
-                 "targetSelector": "#signupModalFormSignup",
-                 "groupName": "idForm"
-               }'
+                data-hs-show-animation-options = '{"targetSelector": "#signupModalFormSignup","groupName": "idForm"}'
               >
                 <i className = "bi-person-circle me-1" /> Sign up
               </a>
@@ -80,10 +74,7 @@ export const MainLeftAligned = () => (
                 role = "button"
                 data-bs-toggle = "modal"
                 data-bs-target = "#signupModal"
-                data-hs-show-animation-options = '{
-                 "targetSelector": "#signupModalFormSignup",
-                 "groupName": "idForm"
-               }'
+                data-hs-show-animation-options = '{"targetSelector": "#signupModalFormSignup","groupName": "idForm"}'
               >
                 <i className = "bi-person-circle me-1" /> Sign up
               </a>

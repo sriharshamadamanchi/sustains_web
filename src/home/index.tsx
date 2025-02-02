@@ -17,6 +17,8 @@ import { About } from "./templates/About";
 import { Careers } from "./templates/Careers";
 import { Contact } from "./templates/Contact";
 import { Products } from "./templates/Products";
+import PrivacyPolicy from "./templates/PrivacyPolicy";
+import TermsOfUse from "./templates/TermsOfUse";
 
 const Dashboard = () => {
 
@@ -28,6 +30,8 @@ const Dashboard = () => {
         <Route path = '/about' element = {<About />} />
         <Route path = '/careers' element = {<Careers />} />
         <Route path = '/contact' element = {<Contact />} />
+        <Route path = '/privacy-policy' element = {<PrivacyPolicy />} />
+        <Route path = '/terms-of-use' element = {<TermsOfUse />} />
         <Route path = '*' element = {<NotFound />} />
       </Routes>
     </BrowserRouter>

@@ -2,11 +2,7 @@
 export const SnippetsSidebar = () => (
   <nav
     className = "js-nav-scroller navbar navbar-expand-lg navbar-sidebar navbar-vertical navbar-light bg-white border-end"
-    data-hs-nav-scroller-options = '{
-  "type": "vertical",
-  "target": ".navbar-nav .active",
-  "offset": 80
- }'
+    data-hs-nav-scroller-options = '{"type": "vertical","target": ".navbar-nav .active","offset": 80}'
   >
     {/* Navbar Toggle */}
     <button

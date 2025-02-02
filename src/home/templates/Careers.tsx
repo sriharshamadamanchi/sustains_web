@@ -182,9 +182,7 @@ export const Careers = () => (
                   <label
                     htmlFor = "careersApplyFormFile"
                     className = "js-file-attach form-label"
-                    data-hs-file-attach-options = '{
-                  "textTarget": "[for=\"careersApplyFormFile\"]"
-                 }'
+                    data-hs-file-attach-options = '{"textTarget": "[for=\"careersApplyFormFile\"]"}'
                   >
                     Résumé / CV
                   </label>
@@ -258,27 +256,6 @@ export const Careers = () => (
     {/* ========== END MAIN CONTENT ========== */}
     {/* ========== SECONDARY CONTENTS ========== */}
     {/* Go To */}
-    <a
-      className = "js-go-to go-to position-fixed"
-      href = "javascript:;"
-      style = {{ visibility: "hidden" }}
-      data-hs-go-to-options = '{
- "offsetTop": 700,
- "position": {
-   "init": {
-     "right": "2rem"
-   },
-   "show": {
-     "bottom": "2rem"
-   },
-   "hide": {
-     "bottom": "-2rem"
-   }
- }
-     }'
-    >
-      <i className = "bi-chevron-up" />
-    </a>
     {/* ========== END SECONDARY CONTENTS ========== */}
     {/* JS Global Compulsory  */}
     {/* JS Implementing Plugins */}

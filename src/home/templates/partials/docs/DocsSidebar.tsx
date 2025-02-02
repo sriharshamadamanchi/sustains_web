@@ -4,11 +4,7 @@ import React from "react"
 export const DocsSidebar = () => (
   <nav
     className = "js-nav-scroller navbar navbar-expand-lg navbar-sidebar navbar-vertical navbar-light bg-white border-end"
-    data-hs-nav-scroller-options = '{
-  "type": "vertical",
-  "target": ".navbar-nav .active",
-  "offset": 80
- }'
+    data-hs-nav-scroller-options = '{"type": "vertical","target": ".navbar-nav .active","offset": 80}'
   >
     {/* Navbar Toggle */}
     <div className = "d-grid flex-grow-1 px-2">

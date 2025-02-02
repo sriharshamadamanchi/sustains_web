@@ -456,7 +456,7 @@ export const Footer = () => (
                 </a>
               </li>
               <li>
-                <a className = "link link-light link-light-75" href = "/terms-of-usage">
+                <a className = "link link-light link-light-75" href = "/terms-of-use">
                   Terms of Use
                 </a>
               </li>

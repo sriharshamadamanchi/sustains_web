@@ -3,10 +3,7 @@ export const MainStickyTopToggle = () => (
   <header
     id = "header"
     className = "navbar navbar-expand-lg navbar-end navbar-sticky-top navbar-show-hide navbar-light"
-    data-hs-header-options = '{
-    "fixMoment": 500,
-    "fixEffect": "slide"
-  }'
+    data-hs-header-options = '{"fixMoment": 500,"fixEffect": "slide"}'
   >
     <div className = "container">
       <nav className = "js-mega-menu navbar-nav-wrap">

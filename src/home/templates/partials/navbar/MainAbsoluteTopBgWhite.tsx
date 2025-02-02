@@ -3,10 +3,7 @@ export const MainAbsoluteTopBgWhite = () => (
   <header
     id = "header"
     className = "navbar navbar-expand-lg navbar-end navbar-light bg-white navbar-absolute-top navbar-show-hide"
-    data-hs-header-options = '{
-    "fixMoment": 0,
-    "fixEffect": "slide"
-  }'
+    data-hs-header-options = '{"fixMoment": 0,"fixEffect": "slide"}'
   >
     <div className = "container">
       <nav className = "js-mega-menu navbar-nav-wrap">

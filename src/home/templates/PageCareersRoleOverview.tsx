@@ -87,14 +87,7 @@ export const PageCareersRoleOverview = () => (
               {/* Card */}
               <div
                 className = "js-sticky-block card card-borderless bg-soft-dark"
-                data-hs-sticky-block-options = '{
-           "parentSelector": "#stickyBlockStartPoint",
-           "targetSelector": "#header",
-           "breakpoint": "lg",
-           "startPoint": "#stickyBlockStartPoint",
-           "endPoint": "#stickyBlockEndPoint",
-           "stickyOffsetTop": 20
-         }'
+                data-hs-sticky-block-options = '{"parentSelector": "#stickyBlockStartPoint","targetSelector": "#header","breakpoint": "lg","startPoint": "#stickyBlockStartPoint","endPoint": "#stickyBlockEndPoint","stickyOffsetTop": 20}'
               >
                 <div className = "card-body">
                   <dl>

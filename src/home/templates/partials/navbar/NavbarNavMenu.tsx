@@ -4,11 +4,7 @@ export const NavbarNavMenu = () => (
     {/* Landings */}
     <li
       className = "hs-has-mega-menu nav-item"
-      data-hs-mega-menu-item-options = '{
-"desktop": {
-  "maxWidth": "40rem"
-}
-    }'
+      data-hs-mega-menu-item-options = '{"desktop": {"maxWidth": "40rem"}}'
     >
       <a
         id = "landingsMegaMenu"
@@ -266,11 +262,7 @@ export const NavbarNavMenu = () => (
     {/* Blog */}
     <li
       className = "hs-has-mega-menu nav-item"
-      data-hs-mega-menu-item-options = '{
-"desktop": {
-  "maxWidth": "50rem"
-}
-    }'
+      data-hs-mega-menu-item-options = '{"desktop": {"maxWidth": "50rem"}}'
     >
       <a
         id = "blogMegaMenu"
@@ -384,11 +376,7 @@ export const NavbarNavMenu = () => (
     {/* Docs */}
     <li
       className = "hs-has-mega-menu nav-item"
-      data-hs-mega-menu-item-options = '{
-"desktop": {
-  "maxWidth": "20rem"
-}
-    }'
+      data-hs-mega-menu-item-options = '{"desktop": {"maxWidth": "20rem"}}'
     >
       <a
         id = "docsMegaMenu"

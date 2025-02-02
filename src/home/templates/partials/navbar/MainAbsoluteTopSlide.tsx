@@ -3,10 +3,7 @@ export const MainAbsoluteTopSlide = () => (
   <header
     id = "header"
     className = "navbar navbar-expand-lg navbar-absolute-top navbar-light navbar-show-hide"
-    data-hs-header-options = '{
-    "fixMoment": 500,
-    "fixEffect": "slide"
-  }'
+    data-hs-header-options = '{"fixMoment": 500,"fixEffect": "slide"}'
   >
     <div className = "container">
       <nav className = "js-mega-menu navbar-nav-wrap">

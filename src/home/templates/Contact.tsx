@@ -1,5 +1,5 @@
 // Copyright © 2025 Sustains AI, All Rights Reserved
-import { Footer } from "./partials/footer/Main";
+import { Footer } from "./partials/footer/Footer";
 import { MainAbsoluteTop } from "./partials/navbar/MainAbsoluteTop";
 
 export const Contact = () => (
