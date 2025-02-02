@@ -421,7 +421,7 @@ export const Footer = () => {
         <div className = "row align-items-center pt-4 pb-3">
           <div className = "col-md">
             <h2 className = "fw-medium text-white-70 mb-0">
-              Join the thriving
+              {"Join the thriving "}
               <span className = "fw-bold text-white">sustains.ai</span> business
             </h2>
           </div>
