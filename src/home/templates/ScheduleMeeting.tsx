@@ -84,6 +84,20 @@ const ScheduleMeeting = () => {
           style = {{ marginBottom: "20px" }}
         />
 
+        <TextField
+          autoFocus
+          required
+          margin = "dense"
+          id = "email"
+          name = "email"
+          label = "Email"
+          type = "email"
+          fullWidth
+          variant = "standard"
+          defaultValue = { ""}
+          style = {{ marginBottom: "20px" }}
+        />
+
         <LocalizationProvider dateAdapter = {AdapterMoment}>
           <DemoContainer sx = {{ marginBottom: "10px" }} components = {["DatePicker"]}>
             <DateTimePicker
