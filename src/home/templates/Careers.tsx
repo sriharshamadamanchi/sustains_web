@@ -1,5 +1,42 @@
+import React from "react";
+import { makeStyles } from "tss-react/mui";
+import emailjs from '@emailjs/browser';
+import { Alert, Button, CircularProgress, Snackbar } from "@mui/material";
+
+const useStyles = makeStyles()(() => ({
+  button: {
+    fontWeight: "bold",
+    height: 50,
+    '&:hover': {
+      backgroundColor: '#08a247',
+  }
+  }
+}))
+
 // Copyright © 2025 Sustains AI, All Rights Reserved
-export const Careers = () => (
+export const Careers = () => {
+
+    const [file, setFile] = React.useState<any>(null);
+    const [loading, setLoading] = React.useState(false);
+    const [open, setOpen] = React.useState(false);
+    const formRef = React.useRef<any>(null);
+  
+    const resetForm = () => {
+      formRef?.current?.reset();
+    };
+  
+    const { classes } = useStyles()
+
+  const convertFileToBase64 = (file: any) => {
+    return new Promise((resolve, reject) => {
+      const reader: any = new FileReader();
+      reader.readAsDataURL(file);
+      reader.onload = () => resolve(reader?.result?.split(",")[1]);
+      reader.onerror = (error: any) => reject(error);
+    });
+  };
+
+  return (
   <>
     {/* Required Meta Tags Always Come First */}
     <meta charSet = "utf-8" />
@@ -56,6 +93,16 @@ export const Careers = () => (
       href = "{{ url_for('static', filename='vendor/swiper/swiper-bundle.min.css') }}"
     />
     {/* ========== MAIN CONTENT ========== */}
+    <Snackbar open={open} autoHideDuration={6000} onClose={() => setOpen(false)} anchorOrigin={{vertical: "top", horizontal: "right"}}>
+      <Alert
+        onClose={() => setOpen(false)}
+        severity="success"
+        variant="filled"
+        sx={{ width: '100%' }}
+      >
+        Your application has been submitted successfully!
+      </Alert>
+    </Snackbar>
     <main id = "content" role = "main">
       {/* Content */}
       <div className = "container content-space-2 content-space-lg-3">
@@ -73,7 +120,37 @@ export const Careers = () => (
           {/* Card */}
           <div className = "card card-shadow">
             <div className = "card-body p-sm-7 p-md-10">
-              <form>
+              <form ref={formRef} onSubmit={async (event) => {
+                      event.preventDefault();
+                      const formData = new FormData(event.currentTarget);
+                      const formJson = Object.fromEntries((formData as any).entries());
+                      console.log("formJson", formJson, formData)
+                      if (!file) {
+                        alert("Please select a file");
+                        return;
+                      }
+                      const base64File = await convertFileToBase64(file);
+
+                      const templateParams = {
+                        from_name: `${formJson.careersApplyFormNameFirstName} ${formJson.careersApplyFormNameLastName}`,
+                        to_name: "Sustains AI",
+                        privacy_check: formJson.careersAppleFormPrivacyCheck,
+                        phone_no: formJson.careersApplyFormNamePhone,
+                        message: formJson.careersApplyFormAdditionalInfoName,
+                        from_email: formJson.careersApplyFormNameWorkEmail,
+                        linkedin_url: formJson.careersApplyFormlinkedinURLName,
+                      }
+                      if (!Object.values(formJson).every(value => value.trim() !== "")) {
+                        return
+                      }
+                      setLoading(true)
+                      emailjs.init("zUPHeeSaWEDRpf-z4")
+                      emailjs.send("sustains_ai_gmail", "sustains_ai_careers", templateParams).then(() => {
+                        setOpen(true)
+                        setLoading(false)
+                        resetForm()
+                      }).catch(() => setLoading(false))
+                  }}>
                 <div className = "mb-5">
                   <h4 className = "card-title">1. Personal details</h4>
                   <p className = "card-text">
@@ -190,7 +267,11 @@ export const Careers = () => (
                     className = "form-control"
                     type = "file"
                     id = "careersApplyFormFile"
+                    accept=".pdf,.doc,.docx"
+                    onChange={(e: any) => setFile(e.target.files[0])}
+                    required
                   />
+                  
                 </div>
                 {/* End Form */}
                 {/* Form */}
@@ -241,10 +322,17 @@ export const Careers = () => (
                 </div>
                 {/* End Check */}
                 <div className = "d-grid">
-                  <button type = "submit" className = "btn btn-primary btn-lg">
-                    Submit application
-                  </button>
-                </div>
+                      <Button
+                        className = {classes.button}
+                        type="submit"
+                        variant="contained"
+                        size="large"
+                        color="primary"
+                      >
+                        {loading ? <CircularProgress size={24} color="inherit" /> : "Send Inquiry"}
+                      </Button>
+                  </div>
+
               </form>
             </div>
           </div>
@@ -263,3 +351,4 @@ export const Careers = () => (
     {/* JS Plugins Init. */}
   </>
 )
+}

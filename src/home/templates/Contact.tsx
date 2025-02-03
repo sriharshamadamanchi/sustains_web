@@ -1,18 +1,33 @@
 // Copyright © 2025 Sustains AI, All Rights Reserved
-import { Snackbar } from "@mui/material";
+import { Alert, Snackbar } from "@mui/material";
 import { Footer } from "./partials/footer/Footer";
 import { MainAbsoluteTop } from "./partials/navbar/MainAbsoluteTop";
 import emailjs from '@emailjs/browser';
 import React from "react";
+import { Button, CircularProgress } from "@mui/material";
+import { makeStyles } from "tss-react/mui";
+
+const useStyles = makeStyles()(() => ({
+  button: {
+    fontWeight: "bold",
+    height: 50,
+    '&:hover': {
+      backgroundColor: '#08a247',
+    }
+  }
+}))
 
 export const Contact = () => {
 
+  const [loading, setLoading] = React.useState(false);
   const [open, setOpen] = React.useState(false);
   const formRef = React.useRef<any>(null);
 
   const resetForm = () => {
     formRef?.current?.reset();
   };
+
+  const { classes } = useStyles()
 
   return (
   <>
@@ -77,13 +92,16 @@ export const Contact = () => {
     {/* ========== END HEADER ========== */}
     {/* ========== MAIN CONTENT ========== */}
     {/* Contact Form */}
-    <Snackbar
-        anchorOrigin={{ vertical: "bottom", horizontal: "center" }}
-        open={open}
-        autoHideDuration={5000}
+    <Snackbar open={open} autoHideDuration={6000} onClose={() => setOpen(false)} anchorOrigin={{vertical: "top", horizontal: "right"}}>
+      <Alert
         onClose={() => setOpen(false)}
-        message="Your inquiry has been submitted successfully!"
-      />
+        severity="success"
+        variant="filled"
+        sx={{ width: '100%' }}
+      >
+        Your inquiry has been submitted successfully!
+      </Alert>
+    </Snackbar>
     <div className = "overflow-hidden">
       <div className = "container content-space-1 content-space-lg-4">
         <div className = "row">
@@ -133,11 +151,16 @@ export const Contact = () => {
                         message: formJson.contactsFormDetails,
                         from_email: formJson.contactsFormNameWorkEmail
                       }
+                      if (!Object.values(formJson).every(value => value.trim() !== "")) {
+                        return
+                      }
+                      setLoading(true)
                       emailjs.init("zUPHeeSaWEDRpf-z4")
                       emailjs.send("sustains_ai_gmail", "sustains_ai_email_temp", templateParams).then(() => {
                         setOpen(true)
+                        setLoading(false)
                         resetForm()
-                      })
+                      }).catch(() => setLoading(false))
                   }}>
                     <div className = "row">
                       <div className = "col-sm-6 mb-4 mb-sm-0">
@@ -267,10 +290,16 @@ export const Contact = () => {
                     </div>
                     {/* End Form */}
                     <div className = "d-grid">
-                      <button type = "submit" className = "btn btn-primary btn-lg">
-                        Send inquiry
-                      </button>
-                    </div>
+                      <Button
+                        className = {classes.button}
+                        type="submit"
+                        variant="contained"
+                        size="large"
+                        color="primary"
+                      >
+                        {loading ? <CircularProgress size={24} color="inherit" /> : "Send Inquiry"}
+                      </Button>
+                  </div>
                   </form>
                 </div>
                 {/* End Card Body */}
