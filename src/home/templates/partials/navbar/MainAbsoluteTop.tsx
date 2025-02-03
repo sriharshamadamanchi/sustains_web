@@ -78,7 +78,7 @@ export const MainAbsoluteTop = () => {
                     Contact
                   </a>
                 </li>
-                <li className="nav-item ms-lg-auto">
+                {/* <li className="nav-item ms-lg-auto">
                   <a
                     className="btn btn-ghost-dark me-2 me-lg-0"
                     href="{{ url_for('pagelogin') }}"
@@ -99,7 +99,7 @@ export const MainAbsoluteTop = () => {
                   >
                     Sign up
                   </a>
-                </li>
+                </li> */}
               </ul>
             </div>
           </div>
