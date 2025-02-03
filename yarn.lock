@@ -1741,6 +1741,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@emailjs/browser@npm:^4.4.1":
+  version: 4.4.1
+  resolution: "@emailjs/browser@npm:4.4.1"
+  checksum: 7c33dae1062c7f3106c38c290643c1096505762dea19a71d89515890fb204f5ae3e2954eec3d4c4de1aa6ea586e956d88cde2e5b9a2e4075ea849de9735b6d16
+  languageName: node
+  linkType: hard
+
 "@emotion/babel-plugin@npm:^11.13.5":
   version: 11.13.5
   resolution: "@emotion/babel-plugin@npm:11.13.5"
@@ -13728,6 +13735,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "sustains_web@workspace:."
   dependencies:
+    "@emailjs/browser": ^4.4.1
     "@emotion/react": ^11.14.0
     "@emotion/styled": ^11.14.0
     "@fontsource/rubik": ^5.1.1

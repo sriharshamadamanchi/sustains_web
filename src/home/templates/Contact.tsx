@@ -1,8 +1,20 @@
 // Copyright © 2025 Sustains AI, All Rights Reserved
+import { Snackbar } from "@mui/material";
 import { Footer } from "./partials/footer/Footer";
 import { MainAbsoluteTop } from "./partials/navbar/MainAbsoluteTop";
+import emailjs from '@emailjs/browser';
+import React from "react";
 
-export const Contact = () => (
+export const Contact = () => {
+
+  const [open, setOpen] = React.useState(false);
+  const formRef = React.useRef<any>(null);
+
+  const resetForm = () => {
+    formRef?.current?.reset();
+  };
+
+  return (
   <>
     {/* Required Meta Tags Always Come First */}
     <meta charSet = "utf-8" />
@@ -65,6 +77,13 @@ export const Contact = () => (
     {/* ========== END HEADER ========== */}
     {/* ========== MAIN CONTENT ========== */}
     {/* Contact Form */}
+    <Snackbar
+        anchorOrigin={{ vertical: "bottom", horizontal: "center" }}
+        open={open}
+        autoHideDuration={5000}
+        onClose={() => setOpen(false)}
+        message="Your inquiry has been submitted successfully!"
+      />
     <div className = "overflow-hidden">
       <div className = "container content-space-1 content-space-lg-4">
         <div className = "row">
@@ -102,7 +121,24 @@ export const Contact = () => (
                 {/* Card Body */}
                 <div className = "card-body">
                   <h4 className = "mb-4">Fill in the form</h4>
-                  <form>
+                  <form ref={formRef} onSubmit={(event) => {
+                      event.preventDefault();
+                      const formData = new FormData(event.currentTarget);
+                      const formJson = Object.fromEntries((formData as any).entries());
+                      const templateParams = {
+                        from_name: `${formJson.contactsFormNameFirstName} ${formJson.contactsFormNameLastName}`,
+                        to_name: "Sustains AI",
+                        company: formJson.contactsFormNameCompany,
+                        company_website: formJson.contactsFormNameCompanyWebsite,
+                        message: formJson.contactsFormDetails,
+                        from_email: formJson.contactsFormNameWorkEmail
+                      }
+                      emailjs.init("zUPHeeSaWEDRpf-z4")
+                      emailjs.send("sustains_ai_gmail", "sustains_ai_email_temp", templateParams).then(() => {
+                        setOpen(true)
+                        resetForm()
+                      })
+                  }}>
                     <div className = "row">
                       <div className = "col-sm-6 mb-4 mb-sm-0">
                         {/* Form */}
@@ -283,3 +319,4 @@ export const Contact = () => (
     {/* JS Plugins Init. */}
   </>
 )
+}
