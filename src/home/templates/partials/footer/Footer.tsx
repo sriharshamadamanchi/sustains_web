@@ -481,7 +481,7 @@ export const Footer = () => {
           <div className = "col-md-auto">
             <ul className = "list-inline mb-0">
               <li className = "list-inline-item">
-                <a className = "link link-light link-light-75" href = "#">
+                <a className = "link link-light link-light-75" href = "https://www.linkedin.com/company/sustains-ai/">
                   Facebook
                 </a>
               </li>
@@ -491,7 +491,7 @@ export const Footer = () => {
                 </a>
               </li>
               <li className = "list-inline-item">
-                <a className = "link link-light link-light-75" href = "#">
+                <a className = "link link-light link-light-75" href = "https://www.linkedin.com/company/sustains-ai/">
                   Twitter
                 </a>
               </li>
