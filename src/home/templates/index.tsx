@@ -20,7 +20,7 @@ export const Home = () => {
       content = "width=device-width, initial-scale=1, shrink-to-fit=no"
     />
     {/* Title */}
-    <title>Home</title>
+    <title>Home | sustains.ai</title>
     {/* Font */}
     <link
       href = "https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
